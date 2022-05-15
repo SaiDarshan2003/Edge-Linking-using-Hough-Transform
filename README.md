@@ -15,14 +15,7 @@ Convert the image to grayscale.
 ### Step4:
 Using Canny  operator from cv2,detect the edges of the image.
 ### Step5:
-Using the HoughLinesP(),detect line co-ordinates for every points in the images.
-<br>
-###Step6:
-Using For loop,draw the lines on the found co-ordinates.
-<br>
-###Step7:
-Display the image.
-<br>
+Using the HoughLinesP(),detect line co-ordinates for every points in the images.Using For loop,draw the lines on the found co-ordinates.Display the image.
 ## Program:
 ```
 # Read image and convert it to grayscale image
