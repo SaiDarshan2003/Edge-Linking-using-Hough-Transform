@@ -24,8 +24,9 @@ Register Number: 212221240047
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-image1=cv2.imread('1.png',0)
-img= cv2.GaussianBlur(image1,(3,3),0)
+BGR_image=cv2.imread('chess.png')
+gray=cv2.cvtColor(BGR_image,cv2.COLOR_BGR2GRAY)
+img= cv2.GaussianBlur(BGR_image,(3,3),0)
 plt.imshow(img)
 # Find the edges in the image using canny detector and display
 edges1 = cv2.Canny(img,100,200)
@@ -37,16 +38,16 @@ lines=cv2.HoughLinesP(edges1,1,np.pi/180, threshold=80, minLineLength=50,maxLine
 # Draw lines on the image
 for line in lines:
     x1, y1, x2, y2 = line [0] 
-    cv2.line(edges1,(x1, y1),(x2, y2),(255, 0, 0),3)
+    cv2.line(BGR_image,(x1, y1),(x2, y2),(210,100,200),3)
 # Display the result
-plt.imshow(edges1)
+plt.imshow(BGR_image)
 ```
 ## Output
 ### Input image and grayscale image
-![inp](1.png)
+![inp](1hf.png)
 ### Canny Edge detector output
-![inp](2.png)
+![inp](2hf.png)
 ### Display the result of Hough transform
-![inp](3.png)
+![inp](3hf.png)
 ## Result:
 Thus the program is written with python and OpenCV to detect lines using Hough transform. 
